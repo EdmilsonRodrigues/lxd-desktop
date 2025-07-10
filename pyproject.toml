@@ -5,3 +5,135 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = []
+
+[dependency-groups]
+build = [
+    "briefcase>=0.3.19",
+]
+
+
+
+# This project was generated with 0.3.23 using template: https://github.com/beeware/briefcase-template @ v0.3.23
+[tool.briefcase]
+project_name = "LXD Desktop"
+bundle = "com.planetae"
+version = "0.0.1"
+url = "https://github.com/EdmilsonRodrigues/lxd-desktop"
+license.file = "LICENSE"
+author = "Edmilson Monteiro Rodrigues Neto"
+author_email = "edmilson.rodriguesn38@gmail.com"
+
+[tool.briefcase.app.lxd_desktop]
+formal_name = "LXD Desktop"
+description = "File this later"
+long_description = """More details about the app should go here.
+"""
+sources = [
+    "src/lxd_desktop",
+]
+test_sources = [
+    "tests",
+]
+
+requires = [
+    "PySide6-Essentials~=6.8",
+    # "PySide6-Addons~=6.8",
+]
+test_requires = [
+    "pytest",
+]
+
+[tool.briefcase.app.lxd_desktop.macOS]
+universal_build = true
+# As of Pyside 6.8, PySide enforces a macOS 12 minimum on wheels.
+min_os_version = "12.0"
+requires = [
+    "std-nslog~=1.0.3",
+]
+
+[tool.briefcase.app.lxd_desktop.linux]
+requires = [
+]
+
+[tool.briefcase.app.lxd_desktop.linux.system.debian]
+system_requires = [
+]
+
+system_runtime_requires = [
+    # Derived from https://doc.qt.io/qt-6/linux-requirements.html
+    "libxext6",
+    "libxrender1",
+    "libx11-xcb1",
+    "libxkbcommon-x11-0",
+    "libxcb-image0",
+    "libxcb-cursor0",
+    "libxcb-shape0",
+    "libxcb-randr0",
+    "libxcb-xfixes0",
+    "libxcb-sync1",
+    "libxcb-icccm4",
+    "libxcb-keysyms1",
+    "libfontconfig1",
+    "libsm6",
+    "libice6",
+    "libglib2.0-0",
+    "libgl1",
+    "libegl1",
+    "libdbus-1-3",
+]
+
+[tool.briefcase.app.lxd_desktop.linux.system.rhel]
+system_requires = [
+]
+
+system_runtime_requires = [
+    "qt6-qtbase-gui",
+]
+
+[tool.briefcase.app.lxd_desktop.linux.system.suse]
+system_requires = [
+]
+
+system_runtime_requires = [
+    "libgthread-2_0-0",
+    "libQt6Gui6",
+]
+
+[tool.briefcase.app.lxd_desktop.linux.system.arch]
+system_requires = [
+]
+
+system_runtime_requires = [
+    "qt6-base",
+]
+
+[tool.briefcase.app.lxd_desktop.linux.appimage]
+manylinux = "manylinux_2_28"
+
+system_requires = [
+# ?? FIXME
+]
+
+linuxdeploy_plugins = [
+]
+
+[tool.briefcase.app.lxd_desktop.linux.flatpak]
+flatpak_runtime = "org.kde.Platform"
+flatpak_runtime_version = "6.9"
+flatpak_sdk = "org.kde.Sdk"
+
+[tool.briefcase.app.lxd_desktop.windows]
+requires = [
+]
+
+# Mobile deployments
+[tool.briefcase.app.lxd_desktop.iOS]
+supported = false
+
+[tool.briefcase.app.lxd_desktop.android]
+supported = false
+
+# Web deployments
+[tool.briefcase.app.lxd_desktop.web]
+supported = false
+
