@@ -4,11 +4,23 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.8"
-dependencies = []
+dependencies = [
+    "pyside6>=6.6.3.1",
+]
 
 [dependency-groups]
 build = [
     "briefcase>=0.3.19",
+]
+dev = [
+    "mypy>=1.14.1",
+    "ruff>=0.12.2",
+]
+tests = [
+    "factory-boy>=3.3.3",
+    "faker>=35.2.2",
+    "pytest>=8.3.5",
+    "pytest-cov>=5.0.0",
 ]
 
 
