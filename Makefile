@@ -22,3 +22,7 @@ static:
 test:
 	uv run pytest
 
+.PHONY: dev
+dev:
+	cd src && uv run -m lxd_desktop
+

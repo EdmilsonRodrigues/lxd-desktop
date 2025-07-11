@@ -5,18 +5,13 @@ File this later
 import importlib.metadata
 import sys
 
-from PySide6 import QtWidgets
+from PySide6.QtGui import QGuiApplication
+from PySide6.QtQml import QQmlApplicationEngine
 
+from lxd_desktop.controllers.main_controller import MainWindowController
 
-class LXDDesktop(QtWidgets.QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.init_ui()
-
-    def init_ui(self):
-        self.setWindowTitle("lxd_desktop")
-        self.show()
-
+DEBUG = True
+MAIN_QML_FILE = 'lxd_desktop/views/main.qml'
 
 def main():
     # Linux desktop environments use an app's .desktop file to integrate the app
@@ -28,13 +23,23 @@ def main():
     # set to match the value set in app's desktop file. For PySide6, this is set
     # with setApplicationName().
 
-    # Find the name of the module that was used to start the app
-    app_module = sys.modules["__main__"].__package__
-    # Retrieve the app's metadata
-    metadata = importlib.metadata.metadata(app_module)
+    if not DEBUG:
+        # Find the name of the module that was used to start the app
+        app_module = sys.modules["__main__"].__package__
+        # Retrieve the app's metadata
+        metadata = importlib.metadata.metadata(app_module)
 
-    QtWidgets.QApplication.setApplicationName(metadata["Formal-Name"])
+        QGuiApplication.setApplicationName(metadata["Formal-Name"])
 
-    app = QtWidgets.QApplication(sys.argv)
-    main_window = LXDDesktop()
+    app = QGuiApplication(sys.argv)
+
+    engine = QQmlApplicationEngine()
+    controller = MainWindowController(engine)
+
+    engine.rootContext().setContextProperty('mainController', controller)
+
+    engine.load(MAIN_QML_FILE)
+
+    if not engine.rootObjects():
+        sys.exit(-1)
     sys.exit(app.exec())
