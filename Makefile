@@ -1,3 +1,13 @@
+.PHONY: setup
+setup: install-uv sync-dependencies
+
+.PHONY: sync-dependencies
+sync-dependencies:
+	uv sync --all-groups
+
+.PHONY: full-lint
+full-lint: lint static 
+
 .PHONY: lint
 lint:
 	uv run ruff check src/
