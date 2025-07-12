@@ -26,3 +26,15 @@ test:
 dev:
 	cd src && uv run -m lxd_desktop
 
+.PHONY: install-uv
+install-uv:
+ifneq ($(shell which uv),)
+else ifneq ($(shell which snap),)
+        sudo snap install --classic astral-uv
+else ifneq ($(shell which brew),)
+        brew install uv
+else ifeq ($(OS),Windows_NT)
+        pwsh -c "irm https://astral.sh/uv/install.ps1 | iex"
+else
+        curl -LsSf https://astral.sh/uv/install.sh | sh
+endif
