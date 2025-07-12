@@ -9,7 +9,6 @@ LXD Desktop
 
 Welcome to **LXD Desktop**, an open-source project dedicated to making System Containers more accessible!
 
----
 
 Why LXD Desktop?
 ----------------
@@ -22,7 +21,6 @@ Unlike VMs and application containers, system containers currently lack a widely
 
 **LXD Desktop aims to bridge this gap.** Our mission is to create an intuitive graphical interface for managing LXD instances. This will empower users to easily manage their system containers in a user-friendly environment, making it easier for them to adopt and utilize this powerful technology.
 
----
 
 How it Works
 ------------
@@ -31,7 +29,6 @@ LXD Desktop is built with a focus on ease of use and accessibility. We are devel
 
 This combination allows us to create a responsive, modern, and easy-to-navigate interface that simplifies the management of LXD instances.
 
----
 
 Contributing to LXD Desktop
 ---------------------------
