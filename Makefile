@@ -36,6 +36,12 @@ test:
 dev:
 	cd src && uv run -m lxd_desktop
 
+.PHONY: build
+build:
+	uv run briefcase create
+	uv run briefcase build
+	uv run briefcase package
+
 .PHONY: install-uv
 install-uv:
 ifneq ($(shell which uv),)
