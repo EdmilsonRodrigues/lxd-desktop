@@ -6,5 +6,5 @@ ApplicationWindow {
     visible: true;
     width: Screen.desktopAvailableWidth * 1; 
     height: Screen.desktopAvailableHeight * 1;
-    color: white
+    color: 'white'
 }
