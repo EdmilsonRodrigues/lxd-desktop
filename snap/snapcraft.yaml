@@ -1,0 +1,24 @@
+name: heroana-lxd-desktop 
+base: core24 
+version: '0.0.1' 
+summary: Desktop interface for LXD
+description: |
+  A desktop interface made to popularize the usage of system
+  containers, creating a GUI for Canonical's LXD.
+
+  This snap is not endorsed by the LXD project.
+
+platforms:
+  amd64:
+
+build-snaps:
+  - lxd
+    
+grade: devel
+confinement: devmode
+
+parts:
+  lxd-desktop:
+    plugin: python
+    source-type: git
+    source: https://github.com/EdmilsonRodrigues/lxd-desktop.git
