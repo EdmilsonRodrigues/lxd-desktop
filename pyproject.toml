@@ -1,5 +1,5 @@
 [project]
-name = "lxd-desktop"
+name = "lxc-desktop"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -29,21 +29,21 @@ tests = [
 
 # This project was generated with 0.3.23 using template: https://github.com/beeware/briefcase-template @ v0.3.23
 [tool.briefcase]
-project_name = "LXD Desktop"
+project_name = "LXC Desktop"
 bundle = "com.planetae"
 version = "0.0.1"
-url = "https://github.com/EdmilsonRodrigues/lxd-desktop"
+url = "https://github.com/EdmilsonRodrigues/lxc-desktop"
 license.file = "LICENSE"
 author = "Edmilson Monteiro Rodrigues Neto"
 author_email = "edmilson.rodriguesn38@gmail.com"
 
-[tool.briefcase.app.lxd-desktop]
-formal_name = "LXD Desktop"
+[tool.briefcase.app.lxc-desktop]
+formal_name = "LXC Desktop"
 description = "File this later"
 long_description = """More details about the app should go here.
 """
 sources = [
-    "src/lxd_desktop",
+    "src/lxc_desktop",
 ]
 test_sources = [
     "tests",
@@ -58,7 +58,7 @@ test_requires = [
     "pytest",
 ]
 
-[tool.briefcase.app.lxd-desktop.macOS]
+[tool.briefcase.app.lxc-desktop.macOS]
 universal_build = true
 # As of Pyside 6.8, PySide enforces a macOS 12 minimum on wheels.
 min_os_version = "12.0"
@@ -66,11 +66,11 @@ requires = [
     "std-nslog~=1.0.3",
 ]
 
-[tool.briefcase.app.lxd-desktop.linux]
+[tool.briefcase.app.lxc-desktop.linux]
 requires = [
 ]
 
-[tool.briefcase.app.lxd-desktop.linux.system.debian]
+[tool.briefcase.app.lxc-desktop.linux.system.debian]
 system_requires = [
 ]
 
@@ -97,7 +97,7 @@ system_runtime_requires = [
     "libdbus-1-3",
 ]
 
-[tool.briefcase.app.lxd-desktop.linux.system.rhel]
+[tool.briefcase.app.lxc-desktop.linux.system.rhel]
 system_requires = [
 ]
 
@@ -105,7 +105,7 @@ system_runtime_requires = [
     "qt6-qtbase-gui",
 ]
 
-[tool.briefcase.app.lxd-desktop.linux.system.suse]
+[tool.briefcase.app.lxc-desktop.linux.system.suse]
 system_requires = [
 ]
 
@@ -114,7 +114,7 @@ system_runtime_requires = [
     "libQt6Gui6",
 ]
 
-[tool.briefcase.app.lxd-desktop.linux.system.arch]
+[tool.briefcase.app.lxc-desktop.linux.system.arch]
 system_requires = [
 ]
 
@@ -122,7 +122,7 @@ system_runtime_requires = [
     "qt6-base",
 ]
 
-[tool.briefcase.app.lxd-desktop.linux.appimage]
+[tool.briefcase.app.lxc-desktop.linux.appimage]
 manylinux = "manylinux_2_28"
 
 system_requires = [
@@ -132,23 +132,23 @@ system_requires = [
 linuxdeploy_plugins = [
 ]
 
-[tool.briefcase.app.lxd-desktop.linux.flatpak]
+[tool.briefcase.app.lxc-desktop.linux.flatpak]
 flatpak_runtime = "org.kde.Platform"
 flatpak_runtime_version = "6.9"
 flatpak_sdk = "org.kde.Sdk"
 
-[tool.briefcase.app.lxd-desktop.windows]
+[tool.briefcase.app.lxc-desktop.windows]
 requires = [
 ]
 
 # Mobile deployments
-[tool.briefcase.app.lxd-desktop.iOS]
+[tool.briefcase.app.lxc-desktop.iOS]
 supported = false
 
-[tool.briefcase.app.lxd-desktop.android]
+[tool.briefcase.app.lxc-desktop.android]
 supported = false
 
 # Web deployments
-[tool.briefcase.app.lxd-desktop.web]
+[tool.briefcase.app.lxc-desktop.web]
 supported = false
 

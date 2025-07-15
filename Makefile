@@ -34,7 +34,7 @@ test:
 
 .PHONY: dev
 dev:
-	cd src && uv run -m lxd_desktop
+	cd src && uv run -m lxc_desktop
 
 .PHONY: build
 build:

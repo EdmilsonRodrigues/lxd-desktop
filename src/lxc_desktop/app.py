@@ -22,7 +22,6 @@ def main():
     # set to match the value set in app's desktop file. For PySide6, this is set
     # with setApplicationName().
     global MAIN_QML_FILE
-    
 
     try:
         # Find the name of the module that was used to start the app
@@ -39,7 +38,7 @@ def main():
     engine = QQmlApplicationEngine()
     controller = MainWindowController(engine)
 
-    engine.rootContext().setContextProperty('mainController', controller)
+    engine.rootContext().setContextProperty("mainController", controller)
 
     engine.load(BASE_PATH / MAIN_QML_FILE)
 
